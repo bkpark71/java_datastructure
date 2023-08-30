@@ -15,10 +15,10 @@ public class ArrList<E> {
     }
 
     public E get(int k){
-      if(size == 0)
+      if(size == 0 || k >= size)
         throw new IndexOutOfBoundsException();
       return a[k];
-    }
+    } // ????
 
     public boolean add(E e){
       if(a.length == size){
@@ -29,7 +29,20 @@ public class ArrList<E> {
       return true;
     }
 
-    public E remove(){ // removeLast
+  public void add(int index, E e){
+    if(a.length == size){
+      //throw new ArrayIndexOutOfBoundsException();
+      resize(a.length * 2);
+    }
+    for (int i = size - 1; i >= index ; i--) {
+    //for (int i = index; i < size -1  ; i++) {
+      a[i+1] = a[i];
+    }
+    a[index] = e;
+    size++;
+  }
+
+  public E remove(){ // removeLast
       if(size == 0)
         throw new IndexOutOfBoundsException();
       E tobeDeleted = a[size-1];
@@ -41,8 +54,24 @@ public class ArrList<E> {
       return tobeDeleted;
     }
 
-    
-    private void resize(int newSize){
+  public E remove(int index){ // removeLast
+    if(size == 0)
+      throw new IndexOutOfBoundsException();
+    E tobeDeleted = a[index];
+    a[index] = null;
+    for(int i = index + 1; i < size ; i++){
+      a[i-1] = a[i];
+    }
+    size--;
+    if(size > 0 && size == a.length/4){
+      resize(a.length / 2);
+    }
+    return tobeDeleted;
+  }
+
+
+
+  private void resize(int newSize){
       System.out.println("resize가 호출됨(" + newSize + ")");
       E[] t = (E[])new Object[newSize];
       for (int i = 0; i < size; i++) {
@@ -50,4 +79,14 @@ public class ArrList<E> {
       }
       a = t;
     }
+
+
+//  @Override
+//  public String toString() {
+//    String list = "[";
+//    for (int i = 0; i <  ; i++) {
+//
+//    }
+//    return
+//  }
 }
