@@ -64,6 +64,20 @@ public class SLinkedList {
     return size;
   }
 
+  public <E> int indexOf(E e){
+    Node temp = head;
+    boolean find = false;
+    int index = 0;
+    while(temp != null){
+      if(temp.getItem() == e) {
+        find = true;
+        break;
+      }
+      index ++;
+      temp = temp.getNext();
+    }
+    return find ? index : -1;
+  }
   public Object removeFirst(){
     Node temp = head;
     head = temp.getNext();

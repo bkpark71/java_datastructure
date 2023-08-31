@@ -19,6 +19,8 @@ public class SListTest {
     sl.add(2, node2);
     System.out.println(sl.size());
     System.out.println(sl);
+    System.out.println("50의 index는 " + sl.indexOf(50));
+    System.out.println("60의 index는 " + sl.indexOf(60));
 
     System.out.println(sl.removeFirst() + "이 삭제됨");
     System.out.println(sl);
