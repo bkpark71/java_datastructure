@@ -11,7 +11,7 @@ public class ArrListTest {
     list.add(0,15);
     System.out.println(list.size());
     list.add(20);
-    list.get(3);
+    //list.get(3);
 
     System.out.println(list.size());
     list.add(30);
@@ -23,6 +23,8 @@ public class ArrListTest {
       System.out.print(list.get(i));
     }
     System.out.println();
+    System.out.println(list.indexOf(30));
+    System.out.println(list.indexOf(60));
     System.out.println(list.remove(1) +"가 삭제됨");
     System.out.println(list.remove(1) +"가 삭제됨");
     System.out.println(list.remove(1) +"가 삭제됨");
@@ -36,7 +38,7 @@ public class ArrListTest {
     aList.add(20);
     aList.add(30);
     aList.add(40);
-    aList.get(10);
+    //aList.get(10);
 
     aList.remove(aList.size()-1);
     aList.remove(aList.size()-1);

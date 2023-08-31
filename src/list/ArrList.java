@@ -14,6 +14,16 @@ public class ArrList<E> {
       return size;
     }
 
+    public <E> int indexOf(E e){
+      int index = -1;
+      for (int i = 0; i < a.length ; i++) {
+        if(e == a[i]) {
+          index = i;
+          break;
+        }
+      }
+      return index;
+    }
     public E get(int k){
       if(size == 0 || k >= size)
         throw new IndexOutOfBoundsException();
