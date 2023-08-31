@@ -78,12 +78,12 @@ public class SLinkedList {
     }
     return find ? index : -1;
   }
-  public Object removeFirst(){
+  public String removeFirst(){
     Node temp = head;
     head = temp.getNext();
     temp.setNext(null);
     size--;
-    return temp.getItem();
+    return temp.getItem().toString();
   }
 
   @Override
