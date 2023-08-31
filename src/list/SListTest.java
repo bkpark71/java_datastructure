@@ -7,17 +7,27 @@ public class SListTest {
     SLinkedList sl = new SLinkedList();
     Node<Integer> node = new Node<>(50);
     //sl.addFirst(node);
-    sl.addLast(node);
+    sl.add(0, node);
     System.out.println(sl.size());
     Node<Integer> node1 = new Node<>(40);
-    sl.addLast(node1);
+    sl.add(0,node1);
     System.out.println(sl.size());
     Node<Integer> node3 = new Node<>(30);
-    sl.addFirst(node3);
+    sl.add(1,node3);
     System.out.println(sl.size());
     Node<Integer> node2 = new Node<>(10);
-    sl.addFirst(node2);
+    sl.add(2, node2);
     System.out.println(sl.size());
+    System.out.println(sl);
+
+    System.out.println(sl.removeFirst() + "이 삭제됨");
+    System.out.println(sl);
+    System.out.println(sl.removeFirst() + "이 삭제됨");
+    System.out.println(sl);
+    System.out.println(sl.removeFirst() + "이 삭제됨");
+    System.out.println(sl);
+    System.out.println(sl.removeFirst() + "이 삭제됨");
+    System.out.println(sl);
 //---------------------------------------------
     LinkedList<Integer> ll = new LinkedList();
     ll.addFirst(10);

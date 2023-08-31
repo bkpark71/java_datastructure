@@ -31,6 +31,28 @@ public class SLinkedList {
     }
   }
 
+  public void add(int index, Node newNode){
+    if(index == 0) {
+      addFirst(newNode);
+    } else {
+      Node prevNode = getNode(index - 1);
+      newNode.setNext(prevNode.getNext());
+      prevNode.setNext(newNode);
+      size++;
+    }
+    if(newNode.getNext() == null){
+      tail = newNode;
+    }
+  }
+
+  public Node getNode(int index){
+    Node x = head;
+    for (int i = 0; i < index ; i++) {
+      x = x.getNext();
+    }
+    return x;
+  }
+
   public Node getTail(){
     Node temp = head.getNext();
     while(temp.getNext() != null){
@@ -40,5 +62,29 @@ public class SLinkedList {
   }
   public int size(){
     return size;
+  }
+
+  public Object removeFirst(){
+    Node temp = head;
+    head = temp.getNext();
+    temp.setNext(null);
+    size--;
+    return temp.getItem();
+  }
+
+  @Override
+  public String toString() {
+    String str = "[";
+    if(size == 0) {
+      str += "]";
+    } else {
+      Node x = head;
+      for (int i = 0; i < size-1 ; i++) {
+        str += x.getItem() + ",";
+        x = x.getNext();
+      }
+      str+= x.getItem() + "]";
+    }
+    return str;
   }
 }

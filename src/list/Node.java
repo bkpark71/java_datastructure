@@ -10,7 +10,7 @@ public class Node<E> {
     this.next = null;
   }
   // 메서드
-  public E getItem() {
+  public Object getItem() {
     return item;
   }
   public Node<E> getNext() {
