@@ -29,6 +29,8 @@ public class ListStack<E> {
   public E pop(){
     if(isEmpty()) throw new EmptyStackException();
     E topItem = top.getItem();
+//    Node<E> tobeDelNode = top;
+//    tobeDelNode.setNext(null);
     top = top.getNext();
     size--;
     return topItem;
