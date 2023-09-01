@@ -8,4 +8,5 @@ public class MapDemo {
     Map<Integer, String> map = new Hashtable<>();
 
   }
+
 }
