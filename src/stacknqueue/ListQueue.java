@@ -5,8 +5,7 @@ public class ListQueue<E> {
   private Node<E> rear;
   private int size;
   public ListQueue(){
-    front = null;
-    rear = null;
+    front = rear = null;
     size = 0;
   }
   // size , isEmpty, peek
